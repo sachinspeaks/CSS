@@ -10,19 +10,21 @@
 // console.log("ye bhi hai");
 
 const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("promise ka data 5 second baad");
-  }, 5000);
+  const randNum = Math.random() * 10;
+  if (randNum <= 5) {
+    setTimeout(() => {
+      resolve(`Number was less than or equal to 5 ${randNum} to be precise`);
+    }, 2000);
+  } else {
+    setTimeout(() => {
+      reject(`Number was greater than 5 ${randNum} to be precise`);
+    }, 2000);
+  }
 });
 
-const asyfun = async () => {
-  return promise;
-};
-
-const tem = async () => {
-  const data = await asyfun();
+async function testFun() {
+  const data = await promise();
   console.log(data);
-};
+}
 
-console.log(tem());
-console.log("ye to hoga");
+testFun();
