@@ -22,8 +22,4 @@ async function testFun() {
   }
 }
 
-// testFun();
-
-const testFun = promise
-  .then((data) => console.log(data))
-  .catch((err) => console.error(err));
+promise.then((data) => console.log(data)).catch((err) => console.error(err));
