@@ -13,18 +13,24 @@ const promise = new Promise((resolve, reject) => {
   const randNum = Math.random() * 10;
   if (randNum <= 5) {
     setTimeout(() => {
-      resolve(`Number was less than or equal to 5 ${randNum} to be precise`);
+      resolve(
+        `Number was less than or equal to 5 ${Math.ceil(randNum)} to be precise`
+      );
     }, 2000);
   } else {
     setTimeout(() => {
-      reject(`Number was greater than 5 ${randNum} to be precise`);
+      reject(`Number was greater than 5 ${Math.ceil(randNum)} to be precise`);
     }, 2000);
   }
 });
 
 async function testFun() {
-  const data = await promise();
-  console.log(data);
+  try {
+    const data = await promise;
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 testFun();
