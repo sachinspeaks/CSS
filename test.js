@@ -24,5 +24,7 @@ const tem = async () => {
   console.log(data);
 };
 
-console.log(tem());
-console.log("ye to hoga");
+// console.log(tem());
+// console.log("ye to hoga");
+
+asyfun().then((data) => console.log(data));
