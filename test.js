@@ -1,14 +1,3 @@
-// let fiveSecondPromise = () => {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve("ha bhai ho gaya tera kaam");
-//     }, 5000);
-//   });
-// };
-
-// fiveSecondPromise().then((data) => console.log(data));
-// console.log("ye bhi hai");
-
 const promise = new Promise((resolve, reject) => {
   const randNum = Math.random() * 10;
   if (randNum <= 5) {
@@ -33,4 +22,8 @@ async function testFun() {
   }
 }
 
-testFun();
+// testFun();
+
+const testFun = promise
+  .then((data) => console.log(data))
+  .catch((err) => console.error(err));
